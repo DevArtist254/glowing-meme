@@ -24,4 +24,7 @@ Init setup
         a. normal 'gh' hover
         b. normal 'gd' definition
         c. normal & visual mode 'ca' code_action
-- treesitter auto indent & language highligh
+- treesitter auto indent & language highlight
+- nonels for formatting and talking to the lsp
+    - ast_grep 'diagnostics'
+    - stylelint 'sass css diagnostics'
