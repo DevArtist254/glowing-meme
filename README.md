@@ -25,6 +25,6 @@ Init setup
         b. normal 'gd' definition
         c. normal & visual mode 'ca' code_action
 - treesitter auto indent & language highlight
-- nonels for formatting and talking to the lsp
+- nonels for formatting and talking to the lsp - shift K
     - ast_grep 'diagnostics'
     - stylelint 'sass css diagnostics'

@@ -9,15 +9,33 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config= function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls" }
+        ensure_installed = { "lua_ls", "cssls", "css_variables", "ts_ls", "emmet_ls", "typos_lsp" }
       })
     end
   },
   {
     "neovim/nvim-lspconfig",
     config= function()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
       local lspconfig = require("lspconfig")
-      lspconfig.lua_ls.setup({})
+      lspconfig.typos_lsp.setup({
+        capabilities = capabilities
+      })
+      lspconfig.emmet_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.ts_ls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.css_variables.setup({
+        capabilities = capabilities
+      })
+      lspconfig.cssls.setup({
+        capabilities = capabilities
+      })
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
 
       -- Keymap
       vim.keymap.set('n', 'gh', vim.lsp.buf.hover, {})
